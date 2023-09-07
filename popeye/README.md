@@ -48,3 +48,4 @@ kubectl get pods
 *for acces to ingress enpoint add the minikube ip into your hosts file with that domain name you set if you are using k8 cluster it will be control lane ip probly. and go to popeye-test.local at web browser.*
 
 ### Thats it after 3-5 min later popeye will produce the report and it will be visable on that domain name we set inside ingress.
+### Done
