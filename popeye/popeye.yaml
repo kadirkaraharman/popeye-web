@@ -64,6 +64,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: popeye-web
+                name: popeye-web-indicates
                 port:
                   number: 80
