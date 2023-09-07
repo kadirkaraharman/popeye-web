@@ -34,7 +34,7 @@
 
 ```
 git clone https://github.com/kadirkaraharman/popeye-web.git
-cd popeye
+cd popeye-web
 kubectl create -f cluster-role.yaml
 kubectl create -f configmap.yaml
 kubectl create -f rolebinding.yaml
