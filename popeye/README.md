@@ -13,8 +13,38 @@
 
 ### Kubernetes Sources
 
-* Cluster Role
-* Configmap
-* RoleBinding
+* ClusterRole
+* ConfigMap
+* ClusterRoleBinding
 * ServiceAccount
 * Pod
+* Service
+* Ingress
+
+### Why we need these resources
+
+* ClusterRole, ClusterRoleBinding and ServiceAccount gives popeye pod to inspect and report all the k8s resources.
+* ConfigMap for popeye installation inside the alpine
+* Pod has 2 container one is alpine and other nginx, we know why we need alpine but nginx will publish this report on web
+* Service, Ingress will expose our app over web. 
+
+###### This project for local development if you wanna use for prod you need to change network sources like service ports ingresses and ssl certs for security reasons etc.
+
+### For using this app.
+
+```
+git clone https://github.com/kadirkaraharman/popeye-web.git
+cd popeye
+kubectl create -f cluster-role.yaml
+kubectl create -f configmap.yaml
+kubectl create -f rolebinding.yaml
+kubectl create -f service-account.yaml
+kubectl create -f popeye.yaml
+kubectl get pods
+
+```
+### Access
+
+*for acces to ingress enpoint add the minikube ip into your hosts file with that domain name you set if you are using k8 cluster it will be control lane ip probly. and go to popeye-test.local at web browser.*
+
+### Thats it after 3-5 min later popeye will produce the report and it will be visable on that domain name we set inside ingress.
