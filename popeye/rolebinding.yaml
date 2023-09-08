@@ -5,7 +5,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: popeye-sa
-    namespace: default
+    namespace: popeye-dev
 roleRef:
   kind: ClusterRole
   name: popeye-cr
